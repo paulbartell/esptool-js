@@ -76,12 +76,13 @@ function _sleep(ms) {
 
 connectButton.onclick = async () => {
 //    device = await navigator.usb.requestDevice({
-//        filters: [{ vendorId: 0x10c4 }]
+//        filters: [{ 
+	Id: 0x10c4 }]
 //    });
 
     if (device === null) {
         device = await navigator.serial.requestPort({
-            filters: [{ vendorId: 0x0403 }]
+            filters: [{ usbVendorId: 0x0403 }]
         });
         transport = new Transport(device);
     }
@@ -111,7 +112,7 @@ connectButton.onclick = async () => {
 resetButton.onclick = async () => {
     if (device === null) {
         device = await navigator.serial.requestPort({
-            filters: [{ vendorId: 0x0403 }]
+            filters: [{ usbVendorId: 0x0403 }]
         });
         transport = new Transport(device);
     }
