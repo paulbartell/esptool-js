@@ -81,7 +81,7 @@ connectButton.onclick = async () => {
 
     if (device === null) {
         device = await navigator.serial.requestPort({
-            filters: [{ usbVendorId: 0x10c4 }]
+            filters: [{ usbVendorId: 0x10c4 },{ vendorId: 0x0403 }]
         });
         transport = new Transport(device);
     }
