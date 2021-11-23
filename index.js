@@ -76,8 +76,7 @@ function _sleep(ms) {
 
 connectButton.onclick = async () => {
 //    device = await navigator.usb.requestDevice({
-//        filters: [{ 
-	Id: 0x10c4 }]
+//        filters: [{ usbVendorId: 0x10c4 }]
 //    });
 
     if (device === null) {
